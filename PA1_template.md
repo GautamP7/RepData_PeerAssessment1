@@ -24,8 +24,12 @@ data1 <- data %>%
     group_by(date) %>%
     summarise(total_steps = sum(steps, na.rm = TRUE))
 
-g <- ggplot(data1, aes(x = data1$date, y = data1$total_steps)) + geom_bar(stat = "identity") + ggtitle("Histogram for total number of steps taken each day") + xlab("Date") + ylab("Total number of steps taken")
+g <- ggplot(data1, aes(data1$total_steps)) + geom_histogram() + ggtitle("Histogram for total number of steps taken each day") + xlab("Total number of steps taken")
 print(g)
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
 ![](figure/meansteps-1.png)<!-- -->
@@ -82,8 +86,12 @@ data4 <- data3 %>%
     group_by(date) %>%
     summarise(total_steps = sum(steps, na.rm = TRUE))
 
-g <- ggplot(data4, aes(x = data4$date, y = data4$total_steps)) + geom_bar(stat = "identity") + ggtitle("Histogram for total number of steps taken each day") + xlab("Date") + ylab("Total number of steps taken")
+g <- ggplot(data4, aes(data4$total_steps)) + geom_histogram() + ggtitle("Histogram for total number of steps taken each day") + xlab("Total number of steps taken")
 print(g)
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
 ![](figure/imputemissingvals-1.png)<!-- -->
